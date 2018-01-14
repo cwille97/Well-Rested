@@ -1,6 +1,7 @@
-from tkinter import *
+from WellRested import * # This imports my WellRested class as well as anything that WellRested imports
+# including tkinter so another import statement is not necessary
 
-root = Tk() # creating a blank window
-label = Label(root, text="Sample Text") # A label is a widget that contains some text
-label.pack()  # pack means that the label will be fit anywhere into our window
-root.mainloop() # Puts your window in a loop
+root = Tk()   # creating a blank window
+interactive = WellRested(root) # Creates a Well Rested object
+root.mainloop()  # Puts your window in a loop so it can display on the screen
+
