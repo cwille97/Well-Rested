@@ -1,0 +1,6 @@
+from tkinter import *
+
+root = Tk() # creating a blank window
+label = Label(root, text="Sample Text") # A label is a widget that contains some text
+label.pack()  # pack means that the label will be fit anywhere into our window
+root.mainloop() # Puts your window in a loop
