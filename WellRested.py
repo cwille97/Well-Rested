@@ -1,5 +1,6 @@
 from tkinter import *
-
+import time
+import tkinter.messagebox
 
 class WellRested:
     def __init__(self, master):
@@ -13,7 +14,7 @@ class WellRested:
         fileMenu.add_command(label="New", command=print)
         fileMenu.add_command(label="Home", command=print)
         fileMenu.add_separator()
-        fileMenu.add_command(label="Exit", command=master.quit)
+        fileMenu.add_command(label="Exit", command=master.destroy)
 
         windowMenu = Menu(topMenu)
         topMenu.add_cascade(label="Window", menu=windowMenu)
@@ -38,9 +39,9 @@ class WellRested:
         createIntervalFrame = Tk()
         promptLabel = Label(createIntervalFrame, text="Please select the type of interval you would like to create")
         promptLabel.grid(row=0)
-        defaultButton = Button(createIntervalFrame, text="Default", command=self.beginDefault and createIntervalFrame.quit)
+        defaultButton = Button(createIntervalFrame, text="Default", command=self.beginDefault and createIntervalFrame.destroy)
         defaultButton.grid(row=1, column=0)
-        customButton = Button(createIntervalFrame, text="Custom", command=self.determineCustom and createIntervalFrame.quit)
+        customButton = Button(createIntervalFrame, text="Custom", command=self.determineCustom and createIntervalFrame.destroy)
         customButton.grid(row=1, column=1)
         createIntervalFrame.mainloop()
 
@@ -51,7 +52,9 @@ class WellRested:
         customFrame.mainloop()
 
     def beginDefault(self):
-        initialTime = 0
+        initialTime = time.time()
+        print(initialTime)
+
 
 
 
